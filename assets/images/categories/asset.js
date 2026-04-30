@@ -1,65 +1,3 @@
-// ─────────────────────────────────────────────
-// Local image assets – organized by category
-// ─────────────────────────────────────────────
-
-const IMAGES = {
-  // ── History ──────────────────────────────
-  history: {
-    origins:  require('./history.avif'),
-    aksum:    require('./fasil.avif'),
-    lalibela: require('./lalibela.webp'),
-    adwa:     require('./flag.avif'),
-  },
-
-  // ── Religion ─────────────────────────────
-  religion: {
-    orthodox: require('./church.avif'),
-    islam:    require('./addis_ababa.avif'),
-  },
-
-  // ── Festivals ────────────────────────────
-  festivals: {
-    timket: require('./culture.avif'),
-    meskel: require('./cultural.avif'),
-  },
-
-  // ── Traditional Clothing ─────────────────
-  clothing: {
-    habesha: require('./dressing.avif'),
-  },
-
-  // ── Music & Dance ────────────────────────
-  music: {
-    eskista: require('./music.avif'),
-  },
-
-  // ── Food ─────────────────────────────────
-  food: {
-    injera: require('./food.webp'),
-    coffee: require('./coffee.avif'),
-  },
-
-  // ── Landscapes ───────────────────────────
-  landscape: {
-    simien: require('./wereb.avif'),
-  },
-
-  // ── Famous People ────────────────────────
-  famous: {
-    menelik: require('./mimlik.avif'),
-  },
-
-  // ── General / Miscellaneous ──────────────
-  general: {
-    plane:    require('./plane.avif'),
-    clothing: require('./clothing.webp'),
-  },
-};
-
-// ─────────────────────────────────────────────
-// Profile Menu Data
-// ─────────────────────────────────────────────
-
 export const PROFILE_MENU = [
   {
     id: "history",
@@ -68,7 +6,9 @@ export const PROFILE_MENU = [
       {
         id: "origins",
         name: "Origins of Humanity",
-        icon: IMAGES.history.origins,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da"
+        },
         description: "Ethiopia is one of the earliest homes of human ancestors.",
         facts:
           "• Discovery of Lucy in Afar region\n• 3.2 million years old\n• Cradle of humanity\n• Human evolution origin"
@@ -76,7 +16,9 @@ export const PROFILE_MENU = [
       {
         id: "aksum",
         name: "Kingdom of Aksum",
-        icon: IMAGES.history.aksum,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1593698054469-2c0c6d6b7c78"
+        },
         description: "Ancient empire and early Christian civilization.",
         facts:
           "• Major ancient trade empire\n• Early Christianity (4th century)\n• Famous stone obelisks\n• Global trade connections"
@@ -84,7 +26,9 @@ export const PROFILE_MENU = [
       {
         id: "zagwe",
         name: "Lalibela Churches",
-        icon: IMAGES.history.lalibela,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1589395937772-6f2c6b9d9f8a"
+        },
         description: "Rock-hewn churches carved into stone.",
         facts:
           "• UNESCO heritage site\n• 11 monolithic churches\n• Built in 12th century\n• Pilgrimage destination"
@@ -92,7 +36,9 @@ export const PROFILE_MENU = [
       {
         id: "adwa",
         name: "Battle of Adwa",
-        icon: IMAGES.history.adwa,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1600195077909-46e573870d6d"
+        },
         description: "Historic victory against Italian invasion.",
         facts:
           "• 1896 battle\n• Led by Menelik II\n• Preserved independence\n• African pride symbol"
@@ -107,15 +53,19 @@ export const PROFILE_MENU = [
       {
         id: "orthodox",
         name: "Orthodox Christianity",
-        icon: IMAGES.religion.orthodox,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1507699622108-4be3abd695ad"
+        },
         description: "Ancient Ethiopian Christian tradition.",
         facts:
-          "• 4th century origin\n• Ge'ez liturgy\n• Fasting traditions\n• Lalibela churches"
+          "• 4th century origin\n• Ge’ez liturgy\n• Fasting traditions\n• Lalibela churches"
       },
       {
         id: "islam",
         name: "Islam in Ethiopia",
-        icon: IMAGES.religion.islam,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f"
+        },
         description: "One of the oldest Muslim communities in Africa.",
         facts:
           "• First Hijra refuge\n• Historic Harar city\n• Peaceful coexistence\n• Cultural heritage"
@@ -130,7 +80,9 @@ export const PROFILE_MENU = [
       {
         id: "timket",
         name: "Timkat",
-        icon: IMAGES.festivals.timket,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1"
+        },
         description: "Ethiopian Epiphany celebration.",
         facts:
           "• Baptism celebration\n• January festival\n• Water rituals\n• Colorful processions"
@@ -138,7 +90,9 @@ export const PROFILE_MENU = [
       {
         id: "meskel",
         name: "Meskel",
-        icon: IMAGES.festivals.meskel,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1520975922284-9f0f0f6c4f6f"
+        },
         description: "Finding of the True Cross festival.",
         facts:
           "• Bonfire ceremony\n• September celebration\n• Religious gathering\n• Cultural unity"
@@ -153,7 +107,9 @@ export const PROFILE_MENU = [
       {
         id: "habesha",
         name: "Habesha Kemis",
-        icon: IMAGES.clothing.habesha,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf"
+        },
         description: "Traditional Ethiopian dress worn by women.",
         facts:
           "• White cotton fabric\n• Colorful embroidery\n• Holiday wear\n• Cultural identity"
@@ -168,7 +124,9 @@ export const PROFILE_MENU = [
       {
         id: "eskista",
         name: "Eskista Dance",
-        icon: IMAGES.music.eskista,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b"
+        },
         description: "Famous Ethiopian shoulder dance.",
         facts:
           "• Shoulder movements\n• Cultural expression\n• Festival dance\n• Energetic rhythm"
@@ -183,7 +141,9 @@ export const PROFILE_MENU = [
       {
         id: "injera",
         name: "Injera",
-        icon: IMAGES.food.injera,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1604908177220-0f6d1f1f7f13"
+        },
         description: "Staple Ethiopian sour flatbread.",
         facts:
           "• Made from teff\n• Sour taste\n• Shared meals\n• Base of Ethiopian cuisine"
@@ -198,7 +158,9 @@ export const PROFILE_MENU = [
       {
         id: "simien",
         name: "Simien Mountains",
-        icon: IMAGES.landscape.simien,
+        icon: {
+          uri: "https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+        },
         description: "Dramatic mountain ranges of Ethiopia.",
         facts:
           "• UNESCO site\n• Rare wildlife\n• Hiking destination\n• High peaks"
@@ -213,7 +175,9 @@ export const PROFILE_MENU = [
       {
         id: "menelik",
         name: "Menelik II",
-        icon: IMAGES.famous.menelik,
+        icon: {
+          uri: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Menelik_II.jpg"
+        },
         description: "Emperor who defeated Italy at Adwa.",
         facts:
           "• Modernized Ethiopia\n• Battle of Adwa leader\n• Expanded empire\n• National hero"
@@ -222,15 +186,8 @@ export const PROFILE_MENU = [
   }
 ];
 
-// ─────────────────────────────────────────────
-// Derived exports
-// ─────────────────────────────────────────────
-
 export const WishlistProducts = PROFILE_MENU
   .flatMap(section => section.data)
   .filter(item =>
     ["origins", "timket", "eskista"].includes(item.id)
   );
-
-// Re-export the image map for convenience
-export { IMAGES };

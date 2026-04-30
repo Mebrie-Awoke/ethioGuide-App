@@ -16,6 +16,10 @@ export default function Profile() {
      <SafeAreaView>
           <Header title="Favorites" showBack={true} />
 
+          <View className="p-2 m-2">
+            <Text className="font-bold text-lg">Saved Topics</Text>
+          </View>
+
            <FlatList
             data={favorites}
             keyExtractor={(item) => item.title}

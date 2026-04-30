@@ -20,6 +20,7 @@ import Header from "@/components/Header";
 import SectionHeader from "@/components/SectionHeader";
 import MenuItem from "@/components/MenuItem";
 import { PROFILE_MENU } from "@/assets/images/categories/asset";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Explore() {
 
@@ -33,9 +34,7 @@ export default function Explore() {
     );
   }, []);
 
-  const style = useAnimatedStyle(() => ({
-    transform: [{ translateX: x.value }],
-  }));
+  
 
   const [activeSection, setActiveSection] = useState(null);
   const [search, setSearch] = useState("");
@@ -90,12 +89,13 @@ export default function Explore() {
       <Header title="Explore" showBack={true} />
 
       {/* 🔍 SEARCH BAR */}
-      <View className="p-4 bg-white  brorder border-none">
+      <View className="bg-white flex-row rounded-lg m-4 px-2 items-center gap-1">
+        <Ionicons name="search" size={20} color="gray" />
         <TextInput
           placeholder="Search culture, history, food..."
           value={search}
           onChangeText={setSearch}
-          className="bg-gray-100 p-3 rounded-lg brorder border-none focus:border-primary focus:ring-1 focus:ring-primary"
+          className="w-full p-2 rounded-lg focus:border-secondary focus:ring-1 focus:ring-primary"
         />
       </View>
 
@@ -144,7 +144,7 @@ export default function Explore() {
       ) : (
         <>
           {/* 🧾 INTRO TEXT */}
-          <View className="px-4 py-4">
+          <View className="px-4 py-2">
             <Text className="text-lg font-semibold text-gray-800">
               Dive into Ethiopia's rich history, culture, and traditions.
             </Text>

@@ -1,10 +1,8 @@
-import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
+import { View, Text,  Pressable, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
-import { Image, Button } from "react-native";
+import { Image, } from "react-native";
 import CategoryImages from '@/assets/images/categories';
-import { globalStyles } from "@/styles/globalStyles";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { TextInput } from "react-native-gesture-handler";
 import Ionicons from "@expo/vector-icons/build/Ionicons";
 import {categories} from "@/constants/data";
 

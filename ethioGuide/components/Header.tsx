@@ -12,7 +12,7 @@ type HeaderProps = {
 export default function Header({title, showBack}: HeaderProps) {
   const router = useRouter();
   return (
-    <View className="bg-blue-900 h-16 flex-row space-x-24 items-center px-10">
+    <View className="bg-blue-900 h-16 flex-row space-x-24 items-center px-5">
       {showBack && (
         <Pressable onPress={() => router.back()}>
           <Ionicons name="arrow-back" size={24} color="white" />
