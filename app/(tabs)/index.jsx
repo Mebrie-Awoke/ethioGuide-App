@@ -7,6 +7,7 @@ import {
   ImageBackground,
   Image,
   TextInput,
+  Pressable,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
@@ -52,24 +53,23 @@ export default function HomeScreen() {
   ];
 
   return (
-    <SafeAreaView className="flex-1 bg-[#F8F7F3]" edges={["top"]}>
+    <SafeAreaView className="flex-1 bg-[#F8F7F3]"  edges={["top"]}>
       <ScrollView showsVerticalScrollIndicator={false} className="flex-1">
         
         {/* --- PREMIUM HERO SUNSET HEADER --- */}
-        <View className="px-4 pt-2 pb-6">
+        <View>
           <ImageBackground
-            source={IMAGES.lalibela}
-            style={{ height: height * 0.3 }}
-            className="w-full rounded-[28px] overflow-hidden justify-between p-5"
-            imageStyle={{ borderRadius: 28 }}
-          >
+            source={IMAGES.aksum}
+            style={{ height: height * 0.4 }}
+            className="w-full overflow-hidden justify-between "
+           >
             {/* Dark Orange/Sunset Warm Vignette Overlay */}
-            <View className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/20" style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0, backgroundColor: "rgba(90, 48, 12, 0.45)" }} />
+            
 
             {/* Header Icons Row */}
-            <View className="flex-row justify-between items-center z-10">
+            <View className="flex-row justify-between items-center z-10 px-2 py-2">
               <TouchableOpacity 
-                className="w-10 h-10 rounded-full bg-white/15 backdrop-blur-md items-center justify-center border border-white/10"
+                className=" w-10 h-10 rounded-full bg-white/15 backdrop-blur-md items-center justify-center border border-white/10"
                 onPress={() => router.push("/settings")}
               >
                 <Ionicons name="menu-outline" size={24} color="#FFFFFF" />
@@ -86,26 +86,25 @@ export default function HomeScreen() {
             </View>
 
             {/* Welcome Typography */}
-            <View className="mb-8 z-10">
+            <View className="px-14 mb-20 z-10">
               <Text className="text-amber-100 text-sm font-semibold tracking-wider uppercase mb-1">
                 Welcome to
               </Text>
-              <Text className="text-white text-4xl font-extrabold tracking-tight" style={{ fontFamily: "System" }}>
+              <Text className="text-white text-4xl font-extrabold tracking-tight" >
                 Ethiopian
               </Text>
             </View>
-          </ImageBackground>
-
+           
           {/* --- SEARCH BAR (OVERLAPPING PILL CARD) --- */}
-          <View className="px-4 mt-[-26px] z-20">
+
+            <View className="absolute bottom-[+14px] left-4 right-4 px-8  z-20">
             <View 
               className="flex-row bg-white rounded-full items-center px-4 py-3 shadow-md border border-gray-100"
-              style={{ elevation: 4 }}
-            >
+             >
               <Ionicons name="search" size={20} color="#9CA3AF" />
               <TextInput
                 placeholder="Search topics, ask or explore..."
-                className="flex-1 ml-2 text-[15px] text-gray-800 h-10"
+                className="flex-1 ml-2 text-[15px] text-gray-800 h-5"
                 placeholderTextColor="#9CA3AF"
                 onFocus={() => router.push("/explore")}
               />
@@ -114,10 +113,13 @@ export default function HomeScreen() {
               </TouchableOpacity>
             </View>
           </View>
+          </ImageBackground>
+
+          
         </View>
 
         {/* --- EXPLORE CATEGORIES 2x2 GRID --- */}
-        <View className="px-4 mb-6">
+        <View className="px-4 my-6">
           <View className="flex-row justify-between items-center mb-3.5 px-1">
             <Text className="text-gray-900 text-lg font-bold">Explore Categories</Text>
             <TouchableOpacity onPress={() => router.push("/explore")}>
@@ -132,9 +134,8 @@ export default function HomeScreen() {
                 key={cat.id}
                 activeOpacity={0.85}
                 onPress={() => router.push("/explore")}
-                className="w-[48%] h-28 rounded-[20px] overflow-hidden mb-4 shadow-sm"
-                style={{ elevation: 2 }}
-              >
+                className="w-[48%] h-28 rounded-lg overflow-hidden mb-4 shadow-sm"
+               >
                 <ImageBackground
                   source={cat.img}
                   className="w-full h-full justify-end p-3.5"
@@ -160,22 +161,22 @@ export default function HomeScreen() {
         {/* --- ASK ETHIOPIAN AI CARD --- */}
         <View className="px-4 mb-6">
           <View 
-            className="rounded-[20px] p-5 flex-row items-center justify-between shadow-sm"
+            className="w-full h-28  rounded-lg p-5 flex-row items-center justify-between shadow-sm"
             style={{ backgroundColor: "#0F6B50" }}
           >
             {/* Promotional Content */}
-            <View className="flex-1 pr-4">
-              <Text className="text-white text-lg font-extrabold mb-1">
+            <View className="flex-1 flex-col">
+              <Text className="text-white text-lg ">
                 Ask Ethiopian AI
               </Text>
-              <Text className="text-emerald-100 text-xs font-medium mb-4 leading-4 opacity-80">
+              <Text className=" font-medium mb-4 ">
                 Get instant answers about Ethiopia
               </Text>
               <TouchableOpacity
                 onPress={() => router.push("/chat")}
-                className="bg-white rounded-full py-2.5 px-5 self-start shadow-sm"
+                className="self-start bg-white px-2 mb-4 rounded-full hover:bg-green-400"
               >
-                <Text className="text-[#061A12] text-xs font-bold uppercase tracking-wider">
+                <Text className="text-lg text-green-800 font-bold uppercase ">
                   Start Chat
                 </Text>
               </TouchableOpacity>
@@ -184,31 +185,33 @@ export default function HomeScreen() {
             {/* Cute 3D Tibeb Robot Helper Image */}
             <Image
               source={require("../../assets/images/tibeb_robot.png")}
-              className="w-24 h-24"
+              className=""
+             style={{ height: height * 0.4, width: 80, borderRadius : 30 }}
+             
               resizeMode="contain"
             />
           </View>
         </View>
 
         {/* --- CONTINUE LEARNING SECTION (FLAGSHIP DETAILS CARD) --- */}
-        <View className="px-4 pb-10">
-          <View className="flex-row justify-between items-center mb-3.5 px-1">
+        <View className="px-4 mb-8 pb-10">
+          <View className="flex-row justify-between  items-center mb-3.5 px-1">
             <Text className="text-gray-900 text-lg font-bold">Continue Learning</Text>
             <TouchableOpacity onPress={() => router.push("/explore")}>
               <Text className="text-gray-400 text-sm font-semibold">Recently Viewed</Text>
             </TouchableOpacity>
-          </View>
+           </View>
 
-          {/* Beautiful Coffee Ceremony Details Card */}
-          <TouchableOpacity
+           {/* Beautiful Coffee Ceremony Details Card */}
+           <TouchableOpacity
             activeOpacity={0.9}
             onPress={() => router.push("/details/coffee")}
-            className="bg-white rounded-3xl p-3 flex-row items-center border border-gray-100 shadow-sm"
-            style={{ elevation: 1 }}
-          >
+            className="bg-white rounded-lg p-3 flex-row items-center border border-gray-100 shadow-sm"
+           
+           >
             <Image
               source={IMAGES.coffee}
-              className="w-20 h-20 rounded-2xl"
+              className="w-20 h-20 rounded-lg"
               resizeMode="cover"
             />
             
@@ -221,14 +224,14 @@ export default function HomeScreen() {
               </Text>
             </View>
 
-            <TouchableOpacity 
+            <Pressable 
               className="p-2 mr-1"
               onPress={() => router.push("/favorite")}
             >
               <Ionicons name="bookmark-outline" size={20} color="#6B7280" />
-            </TouchableOpacity>
-          </TouchableOpacity>
-        </View>
+            </Pressable>
+           </TouchableOpacity>
+          </View>
 
       </ScrollView>
     </SafeAreaView>

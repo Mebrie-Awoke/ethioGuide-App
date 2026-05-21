@@ -239,7 +239,7 @@ export default function Explore() {
                     key={item.id}
                     activeOpacity={0.85}
                     onPress={() => router.push(`/details/${item.id}`)}
-                    className="w-full bg-[#FAF9F5] rounded-3xl p-0 flex-row items-center"
+                    className="w-full bg-[#FAF9F5] rounded-lg p-0 flex-row items-center"
                   >
                     <Image
                       source={item.img}
