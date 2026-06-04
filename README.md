@@ -1,4 +1,6 @@
 ## Ethiopia
+the first Ethiopia application to know what is ethiopia
+
 ### Get started
  
 1. Install dependencies
