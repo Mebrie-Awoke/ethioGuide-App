@@ -1,5 +1,5 @@
 ## Ethiopia
-The first Ethiopia application to know
+The first Ethiopia application to kno
 ### Get started
  
 1. Install dependencies
