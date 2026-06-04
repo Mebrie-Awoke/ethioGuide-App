@@ -1,5 +1,5 @@
 ## Ethiopia
-The first Ethiopia application to know what 
+The first Ethiopia application to know wha
 
 ### Get started
  
